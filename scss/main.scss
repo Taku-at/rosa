@@ -1,0 +1,222 @@
+@import url('https://fonts.googleapis.com/css2?family=Cabin:wght@400;500&family=Herr+Von+Muellerhoff&family=Source+Sans+Pro:wght@400;900&display=swap');
+
+@import 'config';
+@import 'utilities';
+@import 'mobile';
+@import 'form';
+
+/* Universal rule set */
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Basic Style */
+html {
+    font-family: $body-font;
+    font-size: 10px;
+    color: $body-font-color;
+    scroll-behavior: smooth;
+}
+
+section {
+    padding: 3.9rem 0;
+}
+
+img {
+    width: 100%;
+    max-width: 100%;
+}
+
+a {
+    text-decoration: none;
+}
+
+p {
+    font-size: 1.6rem;
+}
+
+.container {
+    width: 100%;
+    max-width: 122.5rem;
+    margin: 0 auto;
+    padding: 0 2.4rem;
+}
+
+/* Header */
+header {
+    width: 100%;
+    position: absolute; /* Absolute will be floating */
+    top: 0;
+    left: 0;
+    z-index: 1;
+    background-image: linear-gradient(to bottom, rgba(0,0, 0, .5), transparent);
+
+
+
+    .nav {
+        height: 7.2rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        .menu-toggle {
+            color: #fff;
+            font-size: 2.2rem;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            right: 2.5rem;
+            cursor: pointer;
+            z-index: 1500;
+
+  
+
+            .fa-times {
+                display: none;
+            }
+        }
+
+        .nav-list {
+            list-style: none;
+            position: fixed; /* fixed is float to the left */
+            top: 0;
+            left: 0;
+            width: 80%;
+            height: 100vh;
+            background-color: $main-font-color-dark;
+            padding: 4.4rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            z-index: 1250;
+            transform: translateX(-100%);
+            transition: transform .5s;
+
+            .nav-item {
+                border-bottom: 2px solid rgba(255, 255, 255, .3);
+
+
+                .nav-link {
+                    display: #000;
+                    color: #fff;
+                    text-transform: uppercase;
+                    font-size: 1.6rem;
+                    letter-spacing: 2px;
+                    margin-right: -2px;
+                    transitioN: color .5s;
+
+                    &:hover {
+                        color: $secondary-font-color;
+                    }
+                }
+            }
+
+        }
+
+        &::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background-color: rgba(0, 0, 0, .8);
+            z-index: 1000;
+            opacity: 0; /* Now 0 but JavaScript shows up */
+            transform: scale(0);
+            transition: opacity .5s;
+        }
+    }
+}
+
+/* Toggle */
+
+body {
+
+    &.open {
+
+        nav {
+
+            &::before {
+                opacity: 1;
+                transform: scale(1);
+            }
+
+            .menu-toggle {
+
+                .fa-times {
+                    display: block;
+                }
+            
+                .fa-bars {
+                    display: none;
+                }
+            }
+        
+            .nav-list {
+                transform: translateX(0);
+            }
+        }
+    } 
+}
+
+/* Hero */
+.hero {
+    width: 100%;
+    height: 100vh;
+    background: url("/images/hero.jpg") center no-repeat;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+
+    .sub-headline {
+        font-size: 8.5rem;
+        font-family: $secondary-font;
+        color: $secondary-font-color;
+        font-weight: 100;
+        line-height: .4; /* Everything closer*/
+        letter-spacing: 2px;
+
+        .first-letter {
+            text-transform: uppercase;
+            font-size: 10.3rem;
+        }
+    }
+
+    .headline {
+        color: #fff;
+        font-size: 3.7rem;
+        font-family: $main-font;
+        text-transform: uppercase;
+        font-weight: 900;
+        letter-spacing: .5rem;
+        margin-right: -.5rem;
+    }
+
+    .headline-description {
+
+
+        .single-animation {
+
+            
+            h5 {
+                color: #fff;
+                font-size: 1.4rem;
+                font-weight: 100;
+                text-transform: uppercase;
+                margin-bottom: 1.2rem;
+                letter-spacing: 3px;
+                margin-right: .3px;
+            }
+        }
+    }
+}
+
+
+/* Discover our story */
