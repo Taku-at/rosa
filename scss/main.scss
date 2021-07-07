@@ -4,6 +4,7 @@
 @import 'utilities';
 @import 'mobile';
 @import 'form';
+@import 'animation';
 
 /* Universal rule set */
 *,
@@ -22,8 +23,13 @@ html {
     scroll-behavior: smooth;
 }
 
+body {
+    overflow-x: hidden;
+}
+
 section {
     padding: 3.9rem 0;
+    overflow: hidden;
 }
 
 img {
@@ -46,6 +52,46 @@ p {
     padding: 0 2.4rem;
 }
 
+/* Headline */
+.global-headline {
+    text-align: center;
+    margin-top: 3.9rem;
+}
+
+.headline {
+    color: #fff;
+    font-size: 3.7rem;
+    font-family: $main-font;
+    text-transform: uppercase;
+    font-weight: 900;
+    letter-spacing: .5rem;
+    margin-right: -.5rem;
+    animation: scale .5s forwards;
+}
+
+.sub-headline {
+    font-size: 8.5rem;
+    font-family: $secondary-font;
+    color: $secondary-font-color;
+    font-weight: 100;
+    line-height: .4; /* Everything closer*/
+    letter-spacing: 2px;
+    opacity: 0;
+    animation: fadeUp .5s forwards ease;
+    animation-delay: .5s;
+
+    .first-letter {
+        text-transform: uppercase;
+        font-size: 10.3rem;
+    }
+}
+
+.headline-dark { /* Second */
+    color: $main-font-color-dark;
+    letter-spacing: .7rem;
+    margin-right: -.7rem;
+}
+
 /* Header */
 header {
     width: 100%;
@@ -54,8 +100,6 @@ header {
     left: 0;
     z-index: 1;
     background-image: linear-gradient(to bottom, rgba(0,0, 0, .5), transparent);
-
-
 
     .nav {
         height: 7.2rem;
@@ -175,20 +219,6 @@ body {
     justify-content: center;
     text-align: center;
 
-    .sub-headline {
-        font-size: 8.5rem;
-        font-family: $secondary-font;
-        color: $secondary-font-color;
-        font-weight: 100;
-        line-height: .4; /* Everything closer*/
-        letter-spacing: 2px;
-
-        .first-letter {
-            text-transform: uppercase;
-            font-size: 10.3rem;
-        }
-    }
-
     .headline {
         color: #fff;
         font-size: 3.7rem;
@@ -220,3 +250,256 @@ body {
 
 
 /* Discover our story */
+.discover-our-story {
+
+    .restaurant-info {
+        text-align: center;
+
+        .restaurant-description {
+            margin-bottom: 2rem;
+
+            p {
+                line-height: 1.6;
+                margin-bottom: 2.4rem;
+            }
+        }
+    }
+
+    .global-headline {
+        text-align: center;
+        margin-top: 6.9rem;
+
+        .sub-headline { /* Third */
+            letter-spacing: -1rem;
+            line-height: .42;
+        }
+
+        .headline-dark { /* Second */
+            color: $main-font-color-dark;
+            letter-spacing: .7rem;
+            margin-right: -.7rem;
+        }
+
+        .asterisk { /* I did at the first */
+            color: $body-font-color;
+            margin: 2.4rem 0;
+        }
+    }
+}
+
+
+/* Tasteful recipes */
+.tasteful-recipes {
+    background: url("/images/tasteful-recipes.jpg") center no-repeat;
+    background-size: cover;
+}
+
+.between {
+    min-height: 65vh;
+    display: flex;
+    align-items: center;;
+}
+
+/* Discover our menu */
+.discover-our-menu {
+
+    .menu-info {
+        text-align: center;
+
+        .menu-description {
+            padding-top: 3rem;
+            margin-bottom: 0;
+
+            p {
+                line-height: 1.6;
+                margin-bottom: 2.4rem;
+            }
+        }
+    }
+
+    .global-headline {
+        text-align: center;
+        margin-top: 6.9rem;
+
+        .sub-headline { /* Third */
+            letter-spacing: -1rem;
+            line-height: .42;
+        }
+
+        .headline-dark { /* Second */
+            color: $main-font-color-dark;
+            letter-spacing: .7rem;
+            margin-right: -.7rem;
+        }
+
+        .asterisk { /* I did at the first */
+            color: $body-font-color;
+            margin: 2.4rem 0;
+        }
+    }
+}
+
+/* The perfect blend */
+.perfect-blend {
+    background: url("/images/perfect-blend.jpg") center no-repeat;
+    background-size: cover;
+}
+
+/* Culnary delight */ 
+.culnary-delight {
+
+    .culnary-info {
+    text-align: center;
+
+        .culnary-description {
+            margin-bottom: 2rem;
+
+            p {
+                line-height: 1.6;
+                margin-bottom: 2.4rem;
+            }
+        }
+    }
+
+    .global-headline {
+        text-align: center;
+        margin-top: 6.9rem;
+
+        .sub-headline { /* Third */
+            letter-spacing: -1rem;
+            line-height: .42;
+        }
+
+        .headline-dark { /* Second */
+            color: $main-font-color-dark;
+            letter-spacing: .7rem;
+            margin-right: -.7rem;
+        }
+
+        .asterisk { /* I did at the first */
+            color: $body-font-color;
+            margin: 2.4rem 0;
+        }
+
+    }
+}
+
+/* Footer */
+footer {
+    padding: 7.9rem;
+    background-color: #121212;
+    color: #fff;
+    text-align: center;
+    position: relative;
+
+    .back-to-top {
+        width: 7rem;
+        height: 7rem;
+        background-color: #121212;
+        position: absolute;
+        top: -3rem;
+        left: 50%;
+        transform: translateX(-50%);
+        border-radius: 50%;
+
+        i {
+            display: block;
+            color: #fff;
+            padding: 2rem;
+            animation: up 2s infinite;
+        }
+    }
+
+    .footer-content {
+        overflow: hidden;
+
+        .footer-content-about {
+            margin-bottom: 5.4rem;   
+
+            h4 {
+                font-size: 1.9rem;
+                text-transform: uppercase;
+                font-weight: 100;
+                letter-spacing: 3px;
+                margin-bottom: 3rem;
+            }
+    
+            .asterisk {
+                margin: 2.4rem 0;   
+            }
+
+            p {
+                line-height: 2;
+            }
+        }
+
+        .footer-content-divider {
+
+            .social-media {
+
+                h4 {
+                    font-size: 1.9rem;
+                    text-transform: uppercase;
+                    font-weight: 100;
+                    letter-spacing: 3px;
+                    margin-bottom: 3rem;
+                }
+
+                .social-icons {
+                    list-style: none;
+                    margin-bottom: 5.4rem;
+                    display: flex;
+                    justify-content: center;
+
+                    i {
+                        font-size: 2.2rem;
+                        color: #fff;
+                        padding: .8rem 2rem;
+                        opacity: .5;
+                        transition:  color .5s;
+
+                        &:hover,
+                        &:focus {
+                            color: $secondary-font-color;
+                        }
+                    }
+                }
+            }
+        }
+
+        .newsletter-form {
+            width: 100%;
+            position: relative;
+            display: flex;
+            justify-content: center;
+
+            h4 {
+                font-size: 1.9rem;
+                text-transform: uppercase;
+                font-weight: 100;
+                letter-spacing: 3px;
+                margin-bottom: 3rem;
+            }
+
+            .newsletter-input {
+                width: 100%;
+                max-width: 25rem;
+                padding: 1rem;
+                border-radius: .4rem;
+            }
+
+            .newsletter-btn {
+                background-color: transparent;
+                border: none;
+                color: $main-font-color-dark;
+                cursor: pointer;
+                font-size: 1.6rem;
+                padding: 1px .6rem;
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%);
+                margin-left: 20.5rem;
+            }
+        }
+    }
+}

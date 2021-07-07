@@ -10,6 +10,9 @@
         height: .25rem;
         background-color: #fff;
         position: relative;
+        opacity: 0;
+        animation: grow 2s forwards;
+        animation-delay: .9s;
     }
 
     .line-right::before,
@@ -19,6 +22,10 @@
         top: 50%;
         transform: translateY(-50%);
         border: .6rem solid transparent;
+        opacity: 0;
+        animation: grow .5s forwards ease-in;
+        animation-delay: 1.2s;
+
     }
 
     .line-right::before {
@@ -36,6 +43,23 @@
         color: $secondary-font-color;
         margin: 0 1.6rem;
     }
+}
+
+/* Single animation */
+.single-animation {
+    opacity: 0;
+    animation: fadeDown .5s forwards ease-in;
+    animation-delay: 1.5s;
+}
+
+/* global asterisk */
+.asterisk {
+    font-size: 1.2rem;
+    color: $secondary-font-color;
+    margin: 0 1.6rem;
+    opacity: 0;
+    animation: spin .5s forwards ease;
+    animation-delay: .7s;
 }
 
 
@@ -60,4 +84,41 @@
         color: #fff;
         background-color: $secondary-font-color;
     }
+}
+
+/* Set the btn and border */
+.body-btn {
+    font-size: 1.5rem;
+    color: $secondary-font-color;
+    position: relative;
+    transition: color .5s;
+
+    &::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: -3px;
+        width: 100%;
+        height: 2px;
+        background-color: $secondary-font-color;
+        transition: background-color .5s;
+
+    }
+
+    &:hover,
+    &:focus {
+        color: $main-font-color-dark;
+    }
+
+    &:hover::before,
+    &:focus::before {
+        background-color: $main-font-color-dark;
+    }
+}
+
+/* image */
+.image-group {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 1.5rem;
 }
